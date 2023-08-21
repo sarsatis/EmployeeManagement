@@ -14,7 +14,7 @@ pipeline {
         IMAGE_REPO = "sarthaksatish"
         NAMESPACE = "jenkins"
         HELM_CHART_DIRECTORY = "charts/priyankalearnings"
-        GITHUB_TOKEN = credentials('githubpat')
+        // GITHUB_TOKEN = credentials('githubpat')
     }
     stages {
         stage('Unit Tests') {
