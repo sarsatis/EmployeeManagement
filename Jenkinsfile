@@ -43,18 +43,18 @@ pipeline {
                 }
             }
         }
-        // stage('helm install') {
-        //   steps {
-        //     script{
-        //         container('helm'){
-        //           sh "helm list"
-        //           sh "helm lint ./${HELM_CHART_DIRECTORY}"
-        //           sh "helm upgrade --set image.tag=${VERSION} ${NAME} ./${HELM_CHART_DIRECTORY} -n ${NAMESPACE}"
-        //           sh "helm list"
-        //         }
-        //          }
-        //     }
-        //   }
+        stage('helm install') {
+          steps {
+            script{
+                container('helm'){
+                  sh "helm list"
+                  sh "helm lint ./${HELM_CHART_DIRECTORY}"
+                  sh "helm upgrade --set image.tag=${VERSION} ${NAME} ./${HELM_CHART_DIRECTORY} -n ${NAMESPACE}"
+                  sh "helm list"
+                }
+                 }
+            }
+          }
         // stage('Clone/Pull Repo') {
         //     steps {
         //         script {
