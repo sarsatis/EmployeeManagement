@@ -49,7 +49,7 @@ pipeline {
                 container('helm'){
                 //   sh "helm list -n ${NAMESPACE}"
                   sh "helm lint ./${HELM_CHART_DIRECTORY}"
-                  sh "helm upgrade --set image.tag=${VERSION} ${NAME} ./${HELM_CHART_DIRECTORY} -n ${NAMESPACE}"
+                  sh "helm upgrade --set image.tag=${VERSION} ${NAME} ./${HELM_CHART_DIRECTORY} -n ${NAMESPACE} --install" 
                   sh "helm list"
                 }
                  }
