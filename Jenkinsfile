@@ -12,7 +12,7 @@ pipeline {
         // VERSION = "${env.GIT_COMMIT}"
         VERSION = "${env.BUILD_ID}"
         IMAGE_REPO = "sarthaksatish"
-        NAMESPACE = "default"
+        NAMESPACE = "jenkins"
         HELM_CHART_DIRECTORY = "helm-templates/"
         // GITHUB_TOKEN = credentials('githubpat')
     }
@@ -47,7 +47,7 @@ pipeline {
           steps {
             script{
                 container('helm'){
-                  sh "helm list -n ${NAMESPACE}"
+                //   sh "helm list -n ${NAMESPACE}"
                   sh "helm lint ./${HELM_CHART_DIRECTORY}"
                   sh "helm upgrade --set image.tag=${VERSION} ${NAME} ./${HELM_CHART_DIRECTORY} -n ${NAMESPACE}"
                   sh "helm list"
