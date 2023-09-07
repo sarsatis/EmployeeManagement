@@ -18,7 +18,8 @@ spec:
         app: gaganemployee
     spec:
       containers:
-      - image: sarthaksatish/gaganemployemanagement:7
+      - image: sarthaksatish/gaganemployemanagement
+        tag: 7
         name: gaganemployemanagement
         resources: {}
 status: {}
