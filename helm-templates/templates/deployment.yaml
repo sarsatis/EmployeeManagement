@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: gaganemployee
+  name: gaganemployee
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gaganemployee
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: gaganemployee
+    spec:
+      containers:
+      - image: sarthaksatish/gaganemployemanagement:7
+        name: gaganemployemanagement
+        resources: {}
+status: {}

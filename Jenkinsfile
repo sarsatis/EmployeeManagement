@@ -12,8 +12,8 @@ pipeline {
         // VERSION = "${env.GIT_COMMIT}"
         VERSION = "${env.BUILD_ID}"
         IMAGE_REPO = "sarthaksatish"
-        NAMESPACE = "jenkins"
-        HELM_CHART_DIRECTORY = "charts/priyankalearnings"
+        NAMESPACE = "default"
+        HELM_CHART_DIRECTORY = "helm-templates/"
         // GITHUB_TOKEN = credentials('githubpat')
     }
     stages {
