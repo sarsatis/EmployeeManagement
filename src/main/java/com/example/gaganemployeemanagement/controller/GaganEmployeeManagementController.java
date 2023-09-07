@@ -16,5 +16,9 @@ public class GaganEmployeeManagementController {
         return "gagan";
     }
 
+    @GetMapping("/sa")
+    public String saySa(){
+        return "sa";
+    }
     
 }
