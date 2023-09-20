@@ -1,13 +1,13 @@
-package com.example.gaganemployeemanagement;
+package com.employee.employeemanagement;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class GaganemployeemanagementApplication {
+public class EmployeeManagementApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(GaganemployeemanagementApplication.class, args);
+		SpringApplication.run(EmployeeManagementApplication.class, args);
 	}
 
 }

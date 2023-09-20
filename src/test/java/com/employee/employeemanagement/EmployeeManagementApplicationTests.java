@@ -1,10 +1,10 @@
-package com.example.gaganemployeemanagement;
+package com.employee.employeemanagement;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class GaganemployeemanagementApplicationTests {
+class EmployeeManagementApplicationTests {
 
 	@Test
 	void contextLoads() {

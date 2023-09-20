@@ -8,17 +8,17 @@ pipeline {
         }
     }
     environment {
-        NAME = "gaganemployemanagement"
+        NAME = "employeemanagement"
         // VERSION = "${env.GIT_COMMIT}"
         VERSION = "${env.BUILD_ID}"
-        IMAGE_REPO = "sarthaksatish"
+                     IMAGE_REPO = "sarthaksatish"
         NAMESPACE = "jenkins"
         HELM_CHART_DIRECTORY = "helm-templates/"
         // GITHUB_TOKEN = credentials('githubpat')
     }
     stages {
         stage('Unit Tests') {
-            steps {
+                  steps {
                 echo 'Implement unit tests if applicable.'
                 echo 'This stage is a sample placeholder'
             }
@@ -45,14 +45,14 @@ pipeline {
         }
         stage('helm install') {
           steps {
-            script{
-                container('helm'){
-                //   sh "helm list -n ${NAMESPACE}"
-                  sh "helm lint ./${HELM_CHART_DIRECTORY}"
-                  sh "helm upgrade --set image.tag=${VERSION} ${NAME} ./${HELM_CHART_DIRECTORY} -n ${NAMESPACE} --install" 
-                  sh "helm list"
+                script{
+                    container('helm'){
+                    //   sh "helm list -n ${NAMESPACE}"
+                    sh "helm lint ./${HELM_CHART_DIRECTORY}"
+                    sh "helm upgrade --set image.tag=${VERSION} ${NAME} ./${HELM_CHART_DIRECTORY} -n ${NAMESPACE} --install"
+                    sh "helm list"
+                    }
                 }
-                 }
             }
           }
         // stage('Clone/Pull Repo') {

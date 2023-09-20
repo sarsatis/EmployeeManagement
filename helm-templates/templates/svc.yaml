@@ -3,14 +3,14 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    app: gaganemployee
-  name: gagansvc
+    app: employeemanagement
+  name: employeemanagement
 spec:
   ports:
   - port: 8080
     protocol: TCP
     targetPort: 8080
   selector:
-    app: gaganemployee
+    app: employeemanagement
 status:
   loadBalancer: {}
