@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql-db
+  namespace: jenkins
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql-db
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: mysql-db
+    spec:
+      containers:
+      - env:
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+                key: MYSQL_ROOT_PASSWORD
+                name: mysql
+        - name: MYSQL_DATABASE
+          valueFrom:
+            configMapKeyRef:
+                key: MYSQL_DATABASE
+                name: mysql
+        image: sarthaksatish/mysql:v1
+        imagePullPolicy: IfNotPresent
+        name: mysql-db
+        ports:
+        - containerPort: 3306
+          protocol: TCP
+        resources: {}
