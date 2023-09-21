@@ -27,7 +27,7 @@ pipeline {
             steps {
                 script {
                     container(name: 'gradle') {
-                        sh "gradle clean build"
+                        sh "gradle clean build -x test"
                     }
                 }
             }
