@@ -3,7 +3,7 @@ def podTemplate = "podTemplate.yaml"
 pipeline {
     agent {
         kubernetes {
-            label "jenkins-${UUID.randomUUID().toString()}"
+            inheritFrom 'jenkins-${UUID.randomUUID().toString()}'
             yamlFile "$podTemplate"
         }
     }
