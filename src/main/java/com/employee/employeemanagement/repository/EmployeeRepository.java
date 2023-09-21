@@ -13,4 +13,8 @@ import com.employee.employeemanagement.model.Employee;
 public interface EmployeeRepository extends JpaRepository<Employee, Integer>,JpaSpecificationExecutor<Employee>{
 
     List<Employee> findByPlace(String place);
+
+    List<Employee> findByBusinessUnit(String businessUnit);
+
+    List<Employee> findByTitle(String title);
 }

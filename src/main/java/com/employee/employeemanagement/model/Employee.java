@@ -44,6 +44,6 @@
  	private String competencies;
 
  	@Column(name="salary")
- 	private Double salary;
+ 	private String salary;
 
  }
