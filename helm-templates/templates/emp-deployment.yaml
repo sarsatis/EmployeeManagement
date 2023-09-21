@@ -39,7 +39,7 @@ spec:
               "until nslookup mysql-db.jenkins.svc.cluster.local; do echo waiting for mysql-db; sleep 2; done;",
             ]
       containers:
-        - image: sarthaksatish/employeemanagement:v5
+        - image: "sarthaksatish/employeemanagement:{{ .Values.image.tag }}"
           imagePullPolicy: IfNotPresent
           name: employeemanagement
           resources: {}
