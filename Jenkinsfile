@@ -23,15 +23,17 @@ pipeline {
                 echo 'This stage is a sample placeholder'
             }
         }
-        // stage('Gradle build') {
-        //     steps {
-        //         script {
-        //             container(name: 'gradle') {
-        //                 sh "gradle clean build -x test"
-        //             }
-        //         }
-        //     }
-        // }
+        
+        stage('Gradle build') {
+            steps {
+                script {
+                    container(name: 'gradle') {
+                        sh "gradle clean build -x test"
+                    }
+                }
+            }
+        }
+
         stage('Build Image') {
             steps {
                 script {
