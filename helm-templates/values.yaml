@@ -1,2 +1,2 @@
-mysql:
-  isDeployed: true
+image:
+  tag: 7
