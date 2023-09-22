@@ -49,6 +49,11 @@ public class EmployeeManagementController {
     public String sayBye(){
         return "Bye";
     }
+
+    @GetMapping("/sarthak")
+    public String saySarthak(){
+        return "Sarthak";
+    }
     
 
     @PostMapping("/importEmployees")
