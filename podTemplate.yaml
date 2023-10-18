@@ -17,13 +17,13 @@ spec:
   securityContext:
     runAsUser: 0
   containers:
-    - name: python
-      image: python:latest
-      imagePullPolicy: Always
-      command:
-        - sleep
-        - "1000"
-      tty: true
+  - name: python
+    image: python:latest
+    imagePullPolicy: Always
+    command:
+      - sleep
+      - "1000"
+    tty: true
       # resources:
       #   requests:
       #     memory: "128Mi"
@@ -31,13 +31,13 @@ spec:
       #   limits:
       #     memory: "500Mi"
       #     cpu: "2"
-#    - name: helm
-#      image: "justinrlee/helm3"
-#      ttyEnabled: true
-#      command:
-#        - sleep
-#      args:
-#        - "9999999"
+  - name: helm
+    image: "justinrlee/helm3"
+    ttyEnabled: true
+    command:
+      - sleep
+    args:
+      - "9999999"
       # resources:
       #   requests:
       #     memory: "128Mi"
@@ -45,15 +45,15 @@ spec:
       #   limits:
       #     memory: "500Mi"
       #     cpu: "2"
-#    - name: kaniko
-#      image: gcr.io/kaniko-project/executor:debug
-#      command:
-#        - sleep
-#      args:
-#        - "9999999"
-#      volumeMounts:
-#        - name: kaniko-secret
-#          mountPath: /kaniko/.docker
+  - name: kaniko
+    image: gcr.io/kaniko-project/executor:debug
+    command:
+      - sleep
+    args:
+      - "9999999"
+    volumeMounts:
+      - name: kaniko-secret
+        mountPath: /kaniko/.docker
       # resources:
       #   requests:
       #     memory: "128Mi"
@@ -61,14 +61,14 @@ spec:
       #   limits:
       #     memory: "500Mi"
       #     cpu: "2"
-#    - name: gradle
-#      image: gradle
-#      imagePullPolicy: Always
-#      ttyEnabled: true
-#      command:
-#        - sleep
-#      args:
-#        - 99d
+  - name: gradle
+    image: gradle
+    imagePullPolicy: Always
+    ttyEnabled: true
+    command:
+      - sleep
+    args:
+      - 99d
       # resources:
       #   requests:
       #     memory: "128Mi"
