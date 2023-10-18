@@ -25,7 +25,7 @@ import com.employee.employeemanagement.repository.EmployeeRepository;
 import java.util.ArrayList;
 import java.util.List;
 
-@RestController
+@RestController("/employeemanagement")
 public class EmployeeManagementController {
 
     @Autowired
