@@ -24,27 +24,27 @@ pipeline {
             }
         }
         
-        stage('Gradle build') {
-            steps {
-                script {
-                    container(name: 'gradle') {
-                        sh "gradle clean build -x test"
-                    }
-                }
-            }
-        }
-
-        stage('Build Image') {
-            steps {
-                script {
-                    container('kaniko') {
-                        sh '''
-              /kaniko/executor --context `pwd` --destination ${IMAGE_REPO}/${NAME}:${VERSION}
-            '''
-                    }
-                }
-            }
-        }
+//         stage('Gradle build') {
+//             steps {
+//                 script {
+//                     container(name: 'gradle') {
+//                         sh "gradle clean build -x test"
+//                     }
+//                 }
+//             }
+//         }
+//
+//         stage('Build Image') {
+//             steps {
+//                 script {
+//                     container('kaniko') {
+//                         sh '''
+//               /kaniko/executor --context `pwd` --destination ${IMAGE_REPO}/${NAME}:${VERSION}
+//             '''
+//                     }
+//                 }
+//             }
+//         }
 
   
         // stage('helm install') {
