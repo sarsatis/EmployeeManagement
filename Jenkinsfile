@@ -78,7 +78,7 @@ pipeline {
         stage('Commit & Push') {
             steps {
                 script {
-                    dir("helm-charts/manifests/${NAME}/") {
+                    dir("helm-charts/manifests/${NAME}/sit/immutable") {
                         withCredentials([usernamePassword(
                             credentialsId: 'githubpat',
                             usernameVariable: 'username',
