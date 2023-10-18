@@ -41,7 +41,7 @@ label_headers = {
 }
 
 label_data = {
-    "labels": [name,"dev"]
+    "labels": [f"appname: {name}","env: sit","releaseName: test","canary"]
 }
 
 print('https://api.github.com/repos/sarsatis/helm-charts/issues/{pr_number}/labels')
