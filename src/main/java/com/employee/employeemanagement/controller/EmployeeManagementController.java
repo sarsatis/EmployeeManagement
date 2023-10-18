@@ -22,10 +22,9 @@ import com.employee.employeemanagement.dto.EmployeeDto;
 import com.employee.employeemanagement.model.Employee;
 import com.employee.employeemanagement.repository.EmployeeRepository;
 
-import java.util.ArrayList;
 import java.util.List;
 
-@RestController("/employeemanagement")
+@RestController
 public class EmployeeManagementController {
 
     @Autowired
