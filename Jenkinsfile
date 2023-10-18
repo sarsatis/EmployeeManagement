@@ -1,4 +1,4 @@
 library identifier: 'jenkinsfile@master', retriever: modernSCM([$class: 'GitSCMSource',
-   remote: '', credentialsId: 'githubpat'])
+   remote: 'https://github.com/sarsatis/jenkins-ci-central-repo.git', credentialsId: 'githubpat'])
 
 jenkinsfile_without_oop_python()
