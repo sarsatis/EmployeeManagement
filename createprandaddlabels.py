@@ -10,6 +10,7 @@ build_id = os.getenv('BUILD_ID')
 branch_name = f"{name}-{build_id}"
 print(branch_name)
 
+print(authorization)
 
 headers = {
     'Accept': 'application/vnd.github+json',
